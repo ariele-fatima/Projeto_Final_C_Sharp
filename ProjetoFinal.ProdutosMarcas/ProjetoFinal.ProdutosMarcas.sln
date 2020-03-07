@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.87
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetoFinal.ProdutosMarcas.Dominio", "ProjetoFinal.ProdutosMarcas.Dominio\ProjetoFinal.ProdutosMarcas.Dominio.csproj", "{AB58D580-04E1-476E-998D-5C053850A474}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetoFinal.ProdutosMarcas.Persistencia.EF", "ProjetoFinal.ProdutosMarcas.Persistencia.EF\ProjetoFinal.ProdutosMarcas.Persistencia.EF.csproj", "{FE14AA56-3FF6-4F2C-B337-E3326C8D9610}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AB58D580-04E1-476E-998D-5C053850A474}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB58D580-04E1-476E-998D-5C053850A474}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB58D580-04E1-476E-998D-5C053850A474}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB58D580-04E1-476E-998D-5C053850A474}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE14AA56-3FF6-4F2C-B337-E3326C8D9610}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE14AA56-3FF6-4F2C-B337-E3326C8D9610}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE14AA56-3FF6-4F2C-B337-E3326C8D9610}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE14AA56-3FF6-4F2C-B337-E3326C8D9610}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CE2BCAF7-2385-4D97-B7E1-477BAE5019A8}
+	EndGlobalSection
+EndGlobal
