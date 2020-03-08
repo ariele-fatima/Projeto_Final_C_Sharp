@@ -48,12 +48,15 @@ namespace ProjetoFinal.ProdutosMarcas.Repositorio.EF
             }
         }
 
-        public List<Marca> SelecionarTodos()
+        public Task<List<Marca>> SelecionarTodos()
         {
-            using (ProdutosMarcasDbContext contexto = new ProdutosMarcasDbContext())
+            return Task.Run(() =>
             {
-                return contexto.Marcas.ToList();
-            }
+                using (ProdutosMarcasDbContext contexto = new ProdutosMarcasDbContext())
+                {
+                    return contexto.Marcas.ToList();
+                }
+            });
         }
     }
 }

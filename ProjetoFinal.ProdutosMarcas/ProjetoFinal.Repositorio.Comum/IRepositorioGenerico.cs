@@ -8,7 +8,7 @@ namespace ProjetoFinal.Repositorio.Comum
 {
     public interface IRepositorioGenerico<TDominio>
     {
-        List<TDominio> SelecionarTodos();
+        Task<List<TDominio>> SelecionarTodos();
         TDominio SelecionarPorId(int id);
         void Inserir(TDominio entidade);
         void Atualizar(TDominio entidade);
