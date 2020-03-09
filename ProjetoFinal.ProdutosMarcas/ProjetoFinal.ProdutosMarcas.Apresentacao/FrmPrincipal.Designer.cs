@@ -38,6 +38,8 @@
             this.IdMarcaProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NomeProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MarcaProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCadastrarMarca = new System.Windows.Forms.Button();
+            this.btnCadastrarProduto = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMarcas)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -46,10 +48,11 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnCadastrarMarca);
             this.groupBox1.Controls.Add(this.dgvMarcas);
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(722, 168);
+            this.groupBox1.Size = new System.Drawing.Size(760, 200);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Marcas cadastradas";
@@ -65,7 +68,7 @@
             this.dgvMarcas.Location = new System.Drawing.Point(7, 20);
             this.dgvMarcas.Name = "dgvMarcas";
             this.dgvMarcas.ReadOnly = true;
-            this.dgvMarcas.Size = new System.Drawing.Size(594, 142);
+            this.dgvMarcas.Size = new System.Drawing.Size(600, 170);
             this.dgvMarcas.TabIndex = 0;
             // 
             // IdMarca
@@ -86,10 +89,11 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnCadastrarProduto);
             this.groupBox2.Controls.Add(this.dgvProdutos);
-            this.groupBox2.Location = new System.Drawing.Point(13, 223);
+            this.groupBox2.Location = new System.Drawing.Point(13, 229);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(722, 180);
+            this.groupBox2.Size = new System.Drawing.Size(760, 200);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Produtos registrados";
@@ -107,7 +111,7 @@
             this.dgvProdutos.Location = new System.Drawing.Point(7, 20);
             this.dgvProdutos.Name = "dgvProdutos";
             this.dgvProdutos.ReadOnly = true;
-            this.dgvProdutos.Size = new System.Drawing.Size(594, 154);
+            this.dgvProdutos.Size = new System.Drawing.Size(600, 170);
             this.dgvProdutos.TabIndex = 0;
             // 
             // IdProduto
@@ -142,11 +146,31 @@
             this.MarcaProduto.ReadOnly = true;
             this.MarcaProduto.Width = 200;
             // 
+            // btnCadastrarMarca
+            // 
+            this.btnCadastrarMarca.Location = new System.Drawing.Point(613, 20);
+            this.btnCadastrarMarca.Name = "btnCadastrarMarca";
+            this.btnCadastrarMarca.Size = new System.Drawing.Size(141, 23);
+            this.btnCadastrarMarca.TabIndex = 1;
+            this.btnCadastrarMarca.Text = "Cadastrar marca...";
+            this.btnCadastrarMarca.UseVisualStyleBackColor = true;
+            this.btnCadastrarMarca.Click += new System.EventHandler(this.btnCadastrarMarca_Click);
+            // 
+            // btnCadastrarProduto
+            // 
+            this.btnCadastrarProduto.Location = new System.Drawing.Point(613, 20);
+            this.btnCadastrarProduto.Name = "btnCadastrarProduto";
+            this.btnCadastrarProduto.Size = new System.Drawing.Size(141, 23);
+            this.btnCadastrarProduto.TabIndex = 2;
+            this.btnCadastrarProduto.Text = "Cadastrar produto...";
+            this.btnCadastrarProduto.UseVisualStyleBackColor = true;
+            this.btnCadastrarProduto.Click += new System.EventHandler(this.btnCadastrarProduto_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(747, 464);
+            this.ClientSize = new System.Drawing.Size(784, 441);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -175,6 +199,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn IdMarcaProduto;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomeProduto;
         private System.Windows.Forms.DataGridViewTextBoxColumn MarcaProduto;
+        private System.Windows.Forms.Button btnCadastrarProduto;
+        private System.Windows.Forms.Button btnCadastrarMarca;
     }
 }
 

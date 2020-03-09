@@ -62,13 +62,27 @@ namespace ProjetoFinal.ProdutosMarcas.Apresentacao
                     MarcaId = produto.MarcaId,
                     Nome = produto.Nome
                 };
-                produtoViewModels.Add(viewModel);
-                dgvProdutos.Invoke((MethodInvoker)delegate
-                {
-                    dgvProdutos.DataSource = produtoViewModels;
-                    dgvProdutos.Refresh();
-                });
+                produtoViewModels.Add(viewModel);                
             }
+            dgvProdutos.Invoke((MethodInvoker)delegate
+            {
+                dgvProdutos.DataSource = produtoViewModels;
+                dgvProdutos.Refresh();
+            });
+        }
+
+        private void btnCadastrarMarca_Click(object sender, EventArgs e)
+        {
+            FrmMarca frmMarca = new FrmMarca();
+            frmMarca.ShowDialog();
+            PreencherDataGridViewMarcarAsync();
+        }
+
+        private void btnCadastrarProduto_Click(object sender, EventArgs e)
+        {
+            FrmProduto frmProduto = new FrmProduto();
+            frmProduto.ShowDialog();
+            PreencherDataGridViewProdutosAsync();
         }
     }
 }
