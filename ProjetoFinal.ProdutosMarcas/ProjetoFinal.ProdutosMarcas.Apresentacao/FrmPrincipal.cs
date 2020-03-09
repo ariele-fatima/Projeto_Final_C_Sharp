@@ -101,7 +101,6 @@ namespace ProjetoFinal.ProdutosMarcas.Apresentacao
             {
                 MessageBox.Show("Selecione uma marca antes.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
         }
 
         private void btnAlterarProduto_Click(object sender, EventArgs e)
@@ -113,6 +112,38 @@ namespace ProjetoFinal.ProdutosMarcas.Apresentacao
                 Produto produtoASerAlterado = repositorioProdutos.SelecionarPorId(idProdutoSelecionado);
                 FrmProduto frmProduto = new FrmProduto(produtoASerAlterado);
                 frmProduto.ShowDialog();
+                PreencherDataGridViewProdutosAsync();
+            }
+            else
+            {
+                MessageBox.Show("Selecione um produto antes.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnExcluirMarca_Click(object sender, EventArgs e)
+        {
+            if (dgvMarcas.SelectedRows.Count > 0)
+            {
+                int idMarcaSelecionada = Convert.ToInt32(dgvMarcas.SelectedRows[0].Cells[0].Value);
+                IRepositorioGenerico<Marca> repositorioMarcas = new RepositorioMarca();
+                Marca marcaASerExcluida = repositorioMarcas.SelecionarPorId(idMarcaSelecionada);
+                repositorioMarcas.Excluir(marcaASerExcluida);
+                PreencherDataGridViewMarcarAsync();
+            }
+            else
+            {
+                MessageBox.Show("Selecione uma marca antes.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnExcluirProduto_Click(object sender, EventArgs e)
+        {
+            if (dgvProdutos.SelectedRows.Count > 0)
+            {
+                int idProdutoSelecionado = Convert.ToInt32(dgvProdutos.SelectedRows[0].Cells[0].Value);
+                IRepositorioGenerico<Produto> repositorioProdutos = new RepositorioProduto();
+                Produto produtoASerExcluido = repositorioProdutos.SelecionarPorId(idProdutoSelecionado);
+                repositorioProdutos.Excluir(produtoASerExcluido);
                 PreencherDataGridViewProdutosAsync();
             }
             else

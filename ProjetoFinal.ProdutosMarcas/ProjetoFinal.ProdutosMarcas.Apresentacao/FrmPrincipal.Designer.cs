@@ -42,6 +42,8 @@
             this.btnCadastrarProduto = new System.Windows.Forms.Button();
             this.btnAlterarMarca = new System.Windows.Forms.Button();
             this.btnAlterarProduto = new System.Windows.Forms.Button();
+            this.btnExcluirMarca = new System.Windows.Forms.Button();
+            this.btnExcluirProduto = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMarcas)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -50,6 +52,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnExcluirMarca);
             this.groupBox1.Controls.Add(this.btnAlterarMarca);
             this.groupBox1.Controls.Add(this.btnCadastrarMarca);
             this.groupBox1.Controls.Add(this.dgvMarcas);
@@ -94,6 +97,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnExcluirProduto);
             this.groupBox2.Controls.Add(this.btnAlterarProduto);
             this.groupBox2.Controls.Add(this.btnCadastrarProduto);
             this.groupBox2.Controls.Add(this.dgvProdutos);
@@ -194,6 +198,26 @@
             this.btnAlterarProduto.UseVisualStyleBackColor = true;
             this.btnAlterarProduto.Click += new System.EventHandler(this.btnAlterarProduto_Click);
             // 
+            // btnExcluirMarca
+            // 
+            this.btnExcluirMarca.Location = new System.Drawing.Point(614, 80);
+            this.btnExcluirMarca.Name = "btnExcluirMarca";
+            this.btnExcluirMarca.Size = new System.Drawing.Size(140, 23);
+            this.btnExcluirMarca.TabIndex = 3;
+            this.btnExcluirMarca.Text = "Excluir marca...";
+            this.btnExcluirMarca.UseVisualStyleBackColor = true;
+            this.btnExcluirMarca.Click += new System.EventHandler(this.btnExcluirMarca_Click);
+            // 
+            // btnExcluirProduto
+            // 
+            this.btnExcluirProduto.Location = new System.Drawing.Point(614, 80);
+            this.btnExcluirProduto.Name = "btnExcluirProduto";
+            this.btnExcluirProduto.Size = new System.Drawing.Size(140, 23);
+            this.btnExcluirProduto.TabIndex = 4;
+            this.btnExcluirProduto.Text = "Excluir produto...";
+            this.btnExcluirProduto.UseVisualStyleBackColor = true;
+            this.btnExcluirProduto.Click += new System.EventHandler(this.btnExcluirProduto_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -231,6 +255,8 @@
         private System.Windows.Forms.Button btnCadastrarMarca;
         private System.Windows.Forms.Button btnAlterarMarca;
         private System.Windows.Forms.Button btnAlterarProduto;
+        private System.Windows.Forms.Button btnExcluirMarca;
+        private System.Windows.Forms.Button btnExcluirProduto;
     }
 }
 
