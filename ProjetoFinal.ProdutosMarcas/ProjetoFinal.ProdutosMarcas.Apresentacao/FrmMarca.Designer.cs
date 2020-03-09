@@ -84,6 +84,7 @@
             this.Name = "FrmMarca";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edição de Marcas";
+            this.Load += new System.EventHandler(this.FrmMarca_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

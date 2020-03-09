@@ -15,25 +15,47 @@ namespace ProjetoFinal.ProdutosMarcas.Apresentacao
 {
     public partial class FrmMarca : Form
     {
-        public FrmMarca()
+        private Marca marcaASerAlterada;
+        public FrmMarca(Marca marca = null)
         {
+            marcaASerAlterada = marca;
             InitializeComponent();
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            Marca novaMarca = new Marca
-            {
-                Nome = txbNomeMarca.Text.Trim()
-            };
             IRepositorioGenerico<Marca> repositorioMarca = new RepositorioMarca();
-            repositorioMarca.Inserir(novaMarca);
+            if (marcaASerAlterada == null)
+            {
+                Marca novaMarca = new Marca
+                {
+                    Nome = txbNomeMarca.Text.Trim()
+                };
+                repositorioMarca.Inserir(novaMarca);
+            }
+            else
+            {
+                marcaASerAlterada.Nome = txbNomeMarca.Text.Trim();
+                repositorioMarca.Atualizar(marcaASerAlterada);
+            }
             Close();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void FrmMarca_Load(object sender, EventArgs e)
+        {
+            if(marcaASerAlterada != null)
+            {
+                txbNomeMarca.Text = marcaASerAlterada.Nome;
+            }
+            else
+            {
+                txbNomeMarca.Text = string.Empty;
+            }
         }
     }
 }

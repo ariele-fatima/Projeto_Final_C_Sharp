@@ -16,8 +16,10 @@ namespace ProjetoFinal.ProdutosMarcas.Apresentacao
 {
     public partial class FrmProduto : Form
     {
-        public FrmProduto()
+        private Produto produtoASerAlterado;
+        public FrmProduto(Produto produto = null)
         {
+            produtoASerAlterado = produto;
             InitializeComponent();
         }
 
@@ -39,17 +41,35 @@ namespace ProjetoFinal.ProdutosMarcas.Apresentacao
             cmbMarcas.DisplayMember = "Nome";
             cmbMarcas.ValueMember = "Id";
             cmbMarcas.Refresh();
+            if (produtoASerAlterado != null)
+            {
+                txbNomeProduto.Text = produtoASerAlterado.Nome;
+                cmbMarcas.SelectedValue = produtoASerAlterado.MarcaId;
+            }
+            else
+            {
+                txbNomeProduto.Text = string.Empty;
+            }
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            Produto novoProduto = new Produto
-            {
-                Nome = txbNomeProduto.Text.Trim(),
-                MarcaId = Convert.ToInt32(cmbMarcas.SelectedValue)
-            };
             IRepositorioGenerico<Produto> repositorioProduto = new RepositorioProduto();
-            repositorioProduto.Inserir(novoProduto);
+            if (produtoASerAlterado == null)
+            {
+                Produto novoProduto = new Produto
+                {
+                    Nome = txbNomeProduto.Text.Trim(),
+                    MarcaId = Convert.ToInt32(cmbMarcas.SelectedValue)
+                };
+                repositorioProduto.Inserir(novoProduto);
+            }
+            else
+            {
+                produtoASerAlterado.Nome = txbNomeProduto.Text.Trim();
+                produtoASerAlterado.MarcaId = Convert.ToInt32(cmbMarcas.SelectedValue);
+                repositorioProduto.Atualizar(produtoASerAlterado);
+            }
             Close();
         }
 

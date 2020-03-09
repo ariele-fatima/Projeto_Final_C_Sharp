@@ -40,6 +40,8 @@
             this.MarcaProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCadastrarMarca = new System.Windows.Forms.Button();
             this.btnCadastrarProduto = new System.Windows.Forms.Button();
+            this.btnAlterarMarca = new System.Windows.Forms.Button();
+            this.btnAlterarProduto = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMarcas)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -48,6 +50,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnAlterarMarca);
             this.groupBox1.Controls.Add(this.btnCadastrarMarca);
             this.groupBox1.Controls.Add(this.dgvMarcas);
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
@@ -66,8 +69,10 @@
             this.IdMarca,
             this.NomeMarca});
             this.dgvMarcas.Location = new System.Drawing.Point(7, 20);
+            this.dgvMarcas.MultiSelect = false;
             this.dgvMarcas.Name = "dgvMarcas";
             this.dgvMarcas.ReadOnly = true;
+            this.dgvMarcas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMarcas.Size = new System.Drawing.Size(600, 170);
             this.dgvMarcas.TabIndex = 0;
             // 
@@ -89,6 +94,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnAlterarProduto);
             this.groupBox2.Controls.Add(this.btnCadastrarProduto);
             this.groupBox2.Controls.Add(this.dgvProdutos);
             this.groupBox2.Location = new System.Drawing.Point(13, 229);
@@ -109,8 +115,10 @@
             this.NomeProduto,
             this.MarcaProduto});
             this.dgvProdutos.Location = new System.Drawing.Point(7, 20);
+            this.dgvProdutos.MultiSelect = false;
             this.dgvProdutos.Name = "dgvProdutos";
             this.dgvProdutos.ReadOnly = true;
+            this.dgvProdutos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProdutos.Size = new System.Drawing.Size(600, 170);
             this.dgvProdutos.TabIndex = 0;
             // 
@@ -166,6 +174,26 @@
             this.btnCadastrarProduto.UseVisualStyleBackColor = true;
             this.btnCadastrarProduto.Click += new System.EventHandler(this.btnCadastrarProduto_Click);
             // 
+            // btnAlterarMarca
+            // 
+            this.btnAlterarMarca.Location = new System.Drawing.Point(614, 50);
+            this.btnAlterarMarca.Name = "btnAlterarMarca";
+            this.btnAlterarMarca.Size = new System.Drawing.Size(140, 23);
+            this.btnAlterarMarca.TabIndex = 2;
+            this.btnAlterarMarca.Text = "Alterar marca...";
+            this.btnAlterarMarca.UseVisualStyleBackColor = true;
+            this.btnAlterarMarca.Click += new System.EventHandler(this.btnAlterarMarca_Click);
+            // 
+            // btnAlterarProduto
+            // 
+            this.btnAlterarProduto.Location = new System.Drawing.Point(614, 50);
+            this.btnAlterarProduto.Name = "btnAlterarProduto";
+            this.btnAlterarProduto.Size = new System.Drawing.Size(140, 23);
+            this.btnAlterarProduto.TabIndex = 3;
+            this.btnAlterarProduto.Text = "Alterar produto...";
+            this.btnAlterarProduto.UseVisualStyleBackColor = true;
+            this.btnAlterarProduto.Click += new System.EventHandler(this.btnAlterarProduto_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -201,6 +229,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MarcaProduto;
         private System.Windows.Forms.Button btnCadastrarProduto;
         private System.Windows.Forms.Button btnCadastrarMarca;
+        private System.Windows.Forms.Button btnAlterarMarca;
+        private System.Windows.Forms.Button btnAlterarProduto;
     }
 }
 
