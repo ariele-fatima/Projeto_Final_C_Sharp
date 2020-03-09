@@ -120,15 +120,24 @@ namespace ProjetoFinal.ProdutosMarcas.Apresentacao
             }
         }
 
-        private void btnExcluirMarca_Click(object sender, EventArgs e)
+        private async void btnExcluirMarca_Click(object sender, EventArgs e)
         {
             if (dgvMarcas.SelectedRows.Count > 0)
             {
                 int idMarcaSelecionada = Convert.ToInt32(dgvMarcas.SelectedRows[0].Cells[0].Value);
-                IRepositorioGenerico<Marca> repositorioMarcas = new RepositorioMarca();
-                Marca marcaASerExcluida = repositorioMarcas.SelecionarPorId(idMarcaSelecionada);
-                repositorioMarcas.Excluir(marcaASerExcluida);
-                PreencherDataGridViewMarcarAsync();
+                IRepositorioGenerico<Produto> repositorioProdutos = new RepositorioProduto();
+                List<Produto> produtos = await repositorioProdutos.SelecionarTodos();
+                if (produtos.Where(p => p.MarcaId == idMarcaSelecionada).Count() > 0)
+                {
+                    MessageBox.Show("Não é possível excluir uma marca associado a um produto.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    IRepositorioGenerico<Marca> repositorioMarcas = new RepositorioMarca();
+                    Marca marcaASerExcluida = repositorioMarcas.SelecionarPorId(idMarcaSelecionada);
+                    repositorioMarcas.Excluir(marcaASerExcluida);
+                    PreencherDataGridViewMarcarAsync();
+                }
             }
             else
             {
